@@ -52,7 +52,7 @@ def password_game(first_time=True):
             print_slow("😅 Oops! Please enter numbers only.")
 
     print_slow("\n🧙‍♂️ Forging your password in the fires of randomness...")
-    time.sleep(1.5)
+    time.sleep(1.0)
 
     password = generate_password(upper_count, lower_count, number_count, symbol_count)
 
@@ -68,7 +68,12 @@ def main():
         password_game(first_time)
         first_time = False  # Skip welcome on next runs
         again = input("\nDo you want to forge another password? (y/n): ").lower()
-        if again != 'y':
+        if again not in ('y', 'n'):
+            print_slow("Invalid input! Please enter 'y' or 'n'.")
+            continue
+        elif again == 'y':
+            continue
+        elif again == 'n':
             print_slow("\nGoodbye! Stay safe and secure! 🔐")
             break
 
