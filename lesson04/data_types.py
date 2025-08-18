@@ -16,56 +16,56 @@ last = "Gray"
 # print(type(pizza) == str)
 # print(isinstance(pizza, str))
 
-# Concatenation
-fullname = first + " " + last
-print(fullname)
+# # Concatenation
+# fullname = first + " " + last
+# print(fullname)
 
-fullname += "!"
-print(fullname)
+# fullname += "!"
+# print(fullname)
 
-# Casting a number to a string
-decade = str(1980)
-print(type(decade))
-print(decade)
+# # Casting a number to a string
+# decade = str(1980)
+# print(type(decade))
+# print(decade)
 
-statement = "I like rock music from the " + decade + "s."
-print(statement)
+# statement = "I like rock music from the " + decade + "s."
+# print(statement)
 
-# Multiple lines
-multiline = '''
-Hey, how are you?                                   
+# # Multiple lines
+# multiline = '''
+# Hey, how are you?                                   
 
-I was just checking in.    
-                                All good?
+# I was just checking in.    
+#                                 All good?
 
-'''
-print(multiline)
+# '''
+# print(multiline)
 
-# Escaping special characters
-sentence = 'I\'m back at work!\tHey!\n\nWhere\'s this at\\located?'
-print(sentence)
+# # Escaping special characters
+# sentence = 'I\'m back at work!\tHey!\n\nWhere\'s this at\\located?'
+# print(sentence)
 
-# String Methods
+# # String Methods
 
-print(first)
-print(first.lower())
-print(first.upper())
-print(first)
+# print(first)
+# print(first.lower())
+# print(first.upper())
+# print(first)
 
-print(multiline.title())
-print(multiline.replace("good", "ok"))
-print(multiline)
+# print(multiline.title())
+# print(multiline.replace("good", "ok"))
+# print(multiline)
 
-print(len(multiline))
-multiline += "                                        "
-multiline = "                  " + multiline
-print(len(multiline))
+# print(len(multiline))
+# multiline += "                                        "
+# multiline = "                  " + multiline
+# print(len(multiline))
 
-print(len(multiline.strip()))
-print(len(multiline.lstrip()))
-print(len(multiline.rstrip()))
+# print(len(multiline.strip()))
+# print(len(multiline.lstrip()))
+# print(len(multiline.rstrip()))
 
-print("")
+# print("")
 
 # Build a menu
 title = "menu".upper()
@@ -77,7 +77,7 @@ print("Cheesecake".ljust(16, ".") + "$4".rjust(4))
 print("")
 
 # string index values
-print(first[1])
+print( first[1])
 print(first[-1])
 print(first[1:-1])
 print(first[1:])

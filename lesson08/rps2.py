@@ -46,6 +46,7 @@ while playagain:
     else:
         print("\n🎉🎉🎉🎉")
         print("Thank you for playing!\n")
-        playagain = False
+        playagain.lower() == "q"
+        break
 
 sys.exit("Bye! 👋")
