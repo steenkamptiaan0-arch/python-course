@@ -4,7 +4,7 @@ data = ['Dave', 42, True]
 
 emptylist = []
 
-print("Dave" in emptylist)
+print("Dave" in users)
 
 print(users[0])
 print(users[-2])
@@ -12,14 +12,15 @@ print(users[-2])
 print(users.index('Sara'))
 
 print(users[0:2])
-print(users[1:])
+print(users[0:]) # slicing from index 1 to the end
 print(users[-3:-1])
 
-print(len(data))
+print(len(data)) # length of the list
 
 users.append('Elsa')
 print(users)
-
+# Adding an item to the end of the list
+# both of these lines are the same
 users += ['Jason']
 print(users)
 
