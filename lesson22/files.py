@@ -6,7 +6,14 @@
 
 # Read - error if it doesn't exist
 
-f = open("names.txt")
+import os
+
+# if os.path.exists("names.txt"):
+#     with open("names.txt", "r") as f:
+#         print(f.read())
+# else:
+#     print("File not found!")
+f = open("names.txt", "r")
 # print(os.getcwd())
 # print(f.read())
 # print(f.read(4))
