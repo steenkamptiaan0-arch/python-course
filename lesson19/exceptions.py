@@ -12,10 +12,11 @@ try:
 except NameError:
     print('NameError means something is probably undefined.')
 except ZeroDivisionError:
-    print('Please do not divide by zero.')
+    print('Please do not divide by zero.\n')
 except Exception as error:
     print(error)
 else:
     print('No errors!')
 finally:
     print("I'm going to print with or without an error.")
+ 
