@@ -77,5 +77,4 @@ def main():
             print_slow("\nGoodbye! Stay safe and secure! 🔐")
             break
 
-if __name__ == "__main__":
-    main()
+
