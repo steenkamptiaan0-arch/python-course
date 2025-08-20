@@ -19,6 +19,33 @@ def read_choice(prompt, choices):
 def clear():
     os.system('cls' if os.name == 'nt' else 'clear')  # Clear console for Windows or Unix-like systems
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#--date Model--
+def default_data():
+    return {
+        'decks': {},
+        'meta': {'created': datetime.utcnow().isoformat()}
+    }
+
+def load_data():
+    if not os.path.exists(DATAFILE):
+        return default_data()
+    with open(DATAFILE, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+def save_data(data):
+    with open(DATAFILE, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+def make_card(question, answer):
+    return {
+        'question': question.strip(),
+        'answer': answer.strip(),
+        'box': 1,           # Leitner box (1 = new, 2 = learning, 3 = learned)
+        'last_reviewed': None,
+        'streak': 0
+    }
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # --Desplay menu--
 def main_menu():
     # data = load_data()

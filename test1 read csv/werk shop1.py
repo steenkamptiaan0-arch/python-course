@@ -4,6 +4,7 @@ import csv
 import string
 import time
 import random
+import subprocess
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # the code below is a phone number and verification code generator
 def numbre(): # Number generation function
@@ -114,12 +115,14 @@ def main():
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # --- Only show menu AFTER verification ---
     while True:
-        print("1. Continue using program")
+        print("✨ Welcome to the Main Menu ✨")
+        print("1. Flashcard Quizzer Game")
         print("2. Logout / Exit")
         choice = input("Choose an option (1 or 2): ").strip()
 
         if choice == "1":
-            print("✅ You chose to continue... (program actions can go here)")
+            print("✅ You chose to play the Flashcard Quizzer Game!\n")
+            subprocess.run(["python", "test1 read csv/password generater.py"])
             # You can add more features inside here later
         elif choice == "2":
             print("👋 Logged out. Goodbye!")
