@@ -74,7 +74,8 @@ def main():
         elif again == 'y':
             continue
         elif again == 'n':
-            print_slow("\nGoodbye! Stay safe and secure! 🔐")
+            print_slow("\nGoodbye! Stay safe and secure! 🔐\n")
             break
 
-
+if __name__ == "__main__":
+    password_game()

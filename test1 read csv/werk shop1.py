@@ -5,7 +5,7 @@ import csv
 import string
 import time
 import random
-import password_generater
+from password_generator import password_game  
 import subprocess
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # the code below is a phone number and verification code generator
@@ -117,29 +117,18 @@ def main():
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # --- Only show menu AFTER verification ---
-
-
 # Add folder of password_generater.py to path (optional, if needed)
-sys.path.append(r"C:\Users\Koelisa\python-course\test1 read csv")
-
-def main_menu():
+# print(os.getcwd())
     while True:
-        print("✨ Welcome to the Main Menu ✨")
+        print (" Please choose an option:")
         print("1. Password Generator Game")
         print("2. Logout / Exit")
+
         choice = input("Choose an option (1 or 2): ").strip()
-
+        
         if choice == "1":
-            file_path = r"C:\Users\Koelisa\python-course\test1 read csv\password_generater.py"
-            
-            # Check if file exists
-            if os.path.isfile(file_path):
-                print("✅ Launching the Password Generator Game...\n")
-                subprocess.run(["python", file_path])
-            else:
-                print(f"❌ File not found at: {file_path}")
-                print("Please check the path or move the file to the correct folder.")
-
+            print(" starting Password Generater Game...")
+            password_game()
         elif choice == "2":
             print("👋 Logged out. Goodbye!")
             break
@@ -147,7 +136,7 @@ def main_menu():
             print("❌ Invalid choice. Please select 1 or 2.")
 
 if __name__ == "__main__":
-    main_menu()
+    main()
 
 
 
