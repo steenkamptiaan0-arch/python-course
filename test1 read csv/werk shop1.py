@@ -118,7 +118,7 @@ def main():
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     # --- Only show menu AFTER verification ---
 # Add folder of password_generater.py to path (optional, if needed)
-# print(os.getcwd())
+    # print(os.getcwd())
     while True:
         print (" Please choose an option:")
         print("1. Password Generator Game")

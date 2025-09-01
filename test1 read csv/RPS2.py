@@ -1,42 +1,58 @@
+import sys
 import random
 from enum import Enum
 
+def rps():
+    game_count = 0
+    player_wins = 0
+    python_wins = 0
 
-class RPS(Enum):
-    ROCK = 1
-    PAPER = 2
-    SCISSORS = 3
+    class RPS(Enum):
+        ROCK = 1
+        PAPER = 2
+        SCISSORS = 3
 
-options = ["1", "2", "3"]
+    while True:
+        playerchoice = input(
+            "\nEnter... \n1 for Rock,\n2 for Paper, or \n3 for Scissors:\n\n"
+        )
 
-def R_P_S():
-    print("Welcome to Rock, Paper, Scissors!")
+        if playerchoice not in ["1", "2", "3"]:
+            print("❌ You must enter 1, 2, or 3.")
+            continue
 
-while True:
-    user_choice = input("Enter 1, 2, or 3 (or 'quit' to stop): ").lower()
-    # quit option
-    if user_choice == "quit":
-        print("Thanks for playing!")
-        break
-    if user_choice not in options:
-        print("Invalid choice. Please try again.")
-        continue
-# Get computer's choice desplay
-    computer_choice = random.choice(options)
-    print("")
-    print("You chose " + str(RPS(int(user_choice))).replace('RPS.', '') + ".")
-    print("Python chose " + str(RPS(int(computer_choice))).replace('RPS.', '') + ".")
-    print("")
-    # Determine the winner
-    if user_choice == computer_choice:
-        print("It's a tie!")
-    elif (
-        (user_choice == "1" and computer_choice == "3") or
-        (user_choice == "2" and computer_choice == "1") or
-        (user_choice == "3" and computer_choice == "2")):
-        print("You win!")
-    else:
-        print("You lose!")
+        player = int(playerchoice)
+        computer = random.randint(1, 3)
 
+        print("\nYou chose " + str(RPS(player)).replace('RPS.', '').title() + ".")
+        print("Python chose " + str(RPS(computer)).replace('RPS.', '').title() + ".\n")
+
+        if (player == 1 and computer == 3) or \
+           (player == 2 and computer == 1) or \
+           (player == 3 and computer == 2):
+            player_wins += 1
+            result = "🎉 You win!"
+        elif player == computer:
+            result = "😲 Tie game!"
+        else:
+            python_wins += 1
+            result = "🐍 Python wins!"
+
+        game_count += 1
+
+        print(result)
+        print(f"\nGame count: {game_count}")
+        print(f"Player wins: {player_wins}")
+        print(f"Python wins: {python_wins}")
+
+        playagain = input("\nPlay again? (Y = Yes, Q = Quit): ").strip().lower()
+        if playagain == "q":
+            print("\n🎉🎉🎉🎉")
+            print("Thank you for playing!\n")
+            print("Bye! 👋")
+            break
+            
+
+# Run
 if __name__ == "__main__":
-    R_P_S()
+    rps()
